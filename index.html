@@ -92,8 +92,13 @@
             <label for="firstElective">First Elective:</label>
             <input type="number" id="firstElective" min="0" max="100" required>
 
-            <label for="secondElective">Second Elective:</label>
-            <input type="number" id="secondElective" min="0" max="100" required>
+            <label for="twoElectives">Take two electives?</label>
+            <input type="checkbox" id="twoElectives" onchange="toggleSecondElective()">
+
+            <div id="secondElectiveContainer" style="display:none;">
+                <label for="secondElective">Second Elective:</label>
+                <input type="number" id="secondElective" min="0" max="100" required>
+            </div>
 
             <button type="button" onclick="calculateGPA()">Calculate GPA</button>
 
