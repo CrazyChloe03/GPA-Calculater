@@ -15,6 +15,11 @@ const gpaScale = {
 
 function calculateGPA() {
     const subjects = ['Math', 'Physics', 'Chinese', 'History', 'English Lit', 'English Lang', 'First Elective', 'Second Elective'];
+    const twoElectivesCheckbox = document.getElementById('twoElectives');
+
+    if (twoElectivesCheckbox.checked) {
+        subjects.push('secondElective');
+    }
 
     let totalGPA = 0;
     let totalPercentage = 0;
@@ -24,7 +29,7 @@ function calculateGPA() {
         const grade = getGrade(subject, gpaScale);
         if (grade.points !== undefined) {
             totalGPA += grade.points;
-            totalPercentage += grade.percentage;
+            totalPercentage += parseFloat(document.getElementById(subject).value);
             validSubjectCount++;
         }
     });
