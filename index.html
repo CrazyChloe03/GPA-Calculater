@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>GPA Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <img src="gpa.png" alt="GPA Image" class="gpa-image">
+        <h1>GPA Calculator</h1>
+        <form id="gpaForm">
+            <label for="math">Math:</label>
+            <input type="number" id="math" min="0" max="100" required>
+
+            <label for="physics">Physics/Chemistry/Biology:</label>
+            <input type="number" id="physics" min="0" max="100" required>
+
+            <label for="chinese">Chinese:</label>
+            <input type="number" id="chinese" min="0" max="100" required>
+
+            <label for="history">History:</label>
+            <input type="number" id="history" min="0" max="100" required>
+
+            <label for="englishLit">English Literature:</label>
+            <input type="number" id="englishLit" min="0" max="100" required>
+
+            <label for="englishLang">English Language:</label>
+            <input type="number" id="englishLang" min="0" max="100" required>
+
+            <label for="firstElective">First Elective:</label>
+            <input type="number" id="firstElective" min="0" max="100" required>
+
+            <label for="secondElective">Second Elective:</label>
+            <input type="number" id="secondElective" min="0" max="100" required>
+
+            <button type="button" onclick="calculateGPA()">Calculate GPA</button>
+
+            <div id="result">
+                <p>Average GPA: <span id="averageGPA">0.0</span></p>
+                <p>Percentage Average: <span id="percentageAverage">0%</span></p>
+                <p>Recommendation: <span id="recommendation">Improve in...</span></p>
+            </div>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
