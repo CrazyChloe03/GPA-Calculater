@@ -14,7 +14,7 @@ const gpaScale = {
 };
 
 function calculateGPA() {
-    const subjects = ['math', 'physics', 'chinese', 'history', 'englishLit', 'englishLang', 'firstElective', 'secondElective'];
+    const subjects = ['Math', 'Physics', 'Chinese', 'History', 'English Lit', 'English Lang', 'First Elective', 'Second Elective'];
 
     let totalGPA = 0;
     let totalPercentage = 0;
@@ -35,7 +35,7 @@ function calculateGPA() {
     }
 
     const averageGPA = totalGPA / validSubjectCount;
-    const averagePercentage = totalPercentage / validSubjectCount;
+    const averagePercentage = validSubjectCount > 0 ? totalPercentage / validSubjectCount : 0;
 
     displayResults(averageGPA, averagePercentage);
 }
