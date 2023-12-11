@@ -14,7 +14,7 @@ const gpaScale = {
 };
 
 function calculateGPA() {
-    const subjects = ['Math', 'Physics', 'Chinese', 'History', 'English Lit', 'English Lang', 'First Elective', 'Second Elective'];
+    const subjects = ['math', 'physics', 'chinese', 'history', 'englishLit', 'englishLang', 'firstElective'];
     const twoElectivesCheckbox = document.getElementById('twoElectives');
 
     if (twoElectivesCheckbox.checked) {
@@ -45,6 +45,18 @@ function calculateGPA() {
     displayResults(averageGPA, averagePercentage);
 }
 
+function toggleSecondElective() {
+    const secondElectiveContainer = document.getElementById('secondElectiveContainer');
+    const twoElectivesCheckbox = document.getElementById('twoElectives');
+
+    if (twoElectivesCheckbox.checked) {
+        secondElectiveContainer.style.display = 'block';
+    } else {
+        secondElectiveContainer.style.display = 'none';
+        document.getElementById('secondElective').value = '';
+    }
+}
+
 function getGrade(subject, gpaScale) {
     const percentage = parseFloat(document.getElementById(subject).value);
     
@@ -55,7 +67,6 @@ function getGrade(subject, gpaScale) {
         }
     }
 
-    // Default to 0 points if no match is found
     return { points: undefined };
 }
 
@@ -67,7 +78,6 @@ function displayResults(averageGPA, averagePercentage) {
     averageGPAElement.textContent = averageGPA.toFixed(2);
     percentageAverageElement.textContent = averagePercentage.toFixed(2) + "%";
 
-    // Add logic to recommend improvement based on lowest subject
     const lowestSubject = findLowestSubject();
     recommendationElement.textContent = `Improve in ${lowestSubject}`;
 }
