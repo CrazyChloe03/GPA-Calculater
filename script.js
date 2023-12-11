@@ -46,12 +46,12 @@ function getGrade(subject, gpaScale) {
     for (const grade in gpaScale) {
         const range = gpaScale[grade];
         if (percentage >= range.min && percentage <= range.max) {
-            return { points: range.points, percentage: percentage };
+            return { points: range.points };
         }
     }
 
     // Default to 0 points if no match is found
-    return { points: undefined, percentage: percentage };
+    return { points: undefined };
 }
 
 function displayResults(averageGPA, averagePercentage) {
